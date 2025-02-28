@@ -1,0 +1,41 @@
+.deck,.card,.face{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.deck{
+	width: 62%;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+.deck .card{
+	width: 18%;
+	margin: 2%;
+	border-radius: 5%;
+	background: linear-gradient(150deg,#CC9988 15%,#8899AA88 75%);
+	cursor: pointer;
+	list-style: none;
+	user-select: none;
+	transform-style: preserve-3d;
+}
+
+.card .face{
+	background-color: #CCCCCC55;
+	border-radius: 5%;
+	backface-visibility: hidden;
+	transition: transform .2s linear;
+}
+
+.card img{width: 100%}
+
+.card .face{transform: rotateY(180deg)}
+.card.flip .face{transform: rotateY(0deg)}
+.card.shake{animation: shake .2s ease-in-out}
+
+@keyframes shake{
+	0%{transform: translateX(-5px);transform: translateY(-3px)}
+	25%{transform: translateX(5px)}
+	50%{transform: translateX(-3px)}
+	100%{transform: translateX(0);transform: translateY(0)}
+}
